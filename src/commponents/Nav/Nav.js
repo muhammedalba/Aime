@@ -63,11 +63,12 @@ export default function Nav() {
   return (
     <>
       <header
-        style={{ position:"fixed" ,transform: trans?"translateY(-150%)":"translateY(0)"}}
+        style={{ position:"fixed" ,transform: trans?"translateY(-150%)":"translateY(0)",
+      }}
         className="w-100"
       >
         <nav
-          style={{ backgroundColor: scroll ? `${bgColor}` : "transparent" }}
+          style={{ backgroundColor: scroll ? `${bgColor}` : "transparent" ,borderBottom:scroll && "1px solid var(--spanColor)"}}
           className="nav "
         >
           <div className=" d-flex w-100 px-2 py-2 d-lg-justify-content-evenly  justify-content-between container">
