@@ -1,0 +1,43 @@
+ #title{
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    font-weight: 900;
+    font-size: 80px;
+    text-transform: uppercase;
+    color: #101624 ;
+    
+
+
+
+}
+#title p{
+    position: absolute;
+    top: 50%;
+    color: var(--spanColor);
+    left: 50%;
+    font-weight: 700;
+    font-size: 40px;
+    border-bottom: 3px solid var(--spanColor);
+    padding-bottom: 15px;
+    transform: translate(-50%,-30%);
+    -webkit-transform: translate(-50%,-30%);
+    -moz-transform: translate(-50%,-30%);
+    -ms-transform: translate(-50%,-30%);
+    -o-transform: translate(-50%,-30%);
+}
+ #title p::after{
+        position: absolute;
+        content: "";
+        width: 40%;
+        height: 1px;
+        background-color: var(--SpanColr);
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }

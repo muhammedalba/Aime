@@ -16,7 +16,7 @@ export default function Nav() {
   const bgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
    
   window.onscroll = () => {
-    console.log(window.scrollY);
+    
     if(window.scrollY > 60 && window.scrollY < 300){
         settrans(true);
         
@@ -29,6 +29,9 @@ export default function Nav() {
       settrans(false);
     }
   };
+
+
+  
   const Scrolto=()=>{
     window.scrollTo(0,0);
   }
@@ -36,7 +39,7 @@ export default function Nav() {
   const nav_link = [
     { title: "home", path: "/" },
     { title: "movie", path: "/" },
-    { title: "tvshow", path: "/" },
+    { title: "tv show", path: "/" },
     { title: "pricing", path: "/" },
     { title: "blog", path: "/" },
     { title: "contact", path: "/" },
@@ -65,7 +68,7 @@ export default function Nav() {
       <header
         style={{ position:"fixed" ,transform: trans?"translateY(-150%)":"translateY(0)",
       }}
-        className="w-100"
+        className="w-100 text-uppercase"
       >
         <nav
           style={{ backgroundColor: scroll ? `${bgColor}` : "transparent" ,borderBottom:scroll && "1px solid var(--spanColor)"}}
@@ -102,7 +105,7 @@ export default function Nav() {
         </div>
 
       </header>
-      {/* list in mobile */}
+      {/* list in mobile start*/}
       <ul
         style={{
           transform: opin ? "translateX(0)" : "translateX(200%)",
@@ -123,6 +126,8 @@ export default function Nav() {
         </span>
         {nav_in_mobile}
       </ul>
+       {/* list in mobile end */}
+      {/* go to top start */}
       <span
           style={{
             transform: scroll ? "translateY(0)" : "translateY(-1500px)",
@@ -133,6 +138,7 @@ export default function Nav() {
           <IoChevronUpOutline />
           <IoChevronUpOutline />
       </span>
+       {/* go to top end */}
     </>
   );
 }
