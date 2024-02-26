@@ -8,10 +8,6 @@ header{
     -o-transition: 1.5s;
     z-index: 999;
 }
-
-
-
-
 nav li{
     list-style: none;
 
@@ -32,11 +28,11 @@ nav a {
     font-weight: 400;
 }
 .serch input{
-    background-color: transparent;
+    background-color: var(--bg-color);
     border: 1px solid var(--spanColor);
     border-radius: 20px;
-    color: white;
-    padding: 5px ;
+    color: white ;
+    padding: 5px  ;
     padding-left: 38px;
     outline: none;
     -webkit-border-radius: 20px;
@@ -56,13 +52,25 @@ header .serch svg {
     font-size: 30px;
     cursor: pointer;
     position: absolute;
-    left: 10px;
+    left: 6px;
     bottom: 50%;
     transform: translateY(50%);
     -webkit-transform: translateY(50%);
     -moz-transform: translateY(50%);
     -ms-transform: translateY(50%);
     -o-transform: translateY(50%);
+    z-index: 100;
+}
+.serch p{
+    bottom: -140%;
+    width: 100%;
+    padding: 10px 0;
+    color: #121211;
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: #e3d70461;
 }
 header span {
     transition: 0.5s;
@@ -128,6 +136,7 @@ header span {
 header #span svg{
     z-index: 999 !important;
 }
+/* mobile */
 #mobile{
     position: fixed;
     top: 50px;
@@ -177,4 +186,58 @@ header #span svg{
     -moz-transition: 2s;
     -ms-transition: 2s;
     -o-transition: 2s;
+}
+
+/* search */
+#searchAnemi{
+    background: url(../../imges/footer_bg.jpg)  repeat-x ;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 80%;
+}
+/* card */
+#card{
+    height: 350px;
+    color: var(--minColor);
+    padding: 0;
+  margin: 20px 10px;
+}
+#card a {
+    color: var(--minColor);
+    text-decoration: none;
+}
+/* imge */
+#imge {
+    height: 80%;
+    width: 100%;
+    border-radius:15px ;
+    -webkit-border-radius:15px ;
+    -moz-border-radius:15px ;
+    -ms-border-radius:15px ;
+    -o-border-radius:15px ;
+}
+#cardSpanColor{
+  
+    color: var(--spanColor);
+}
+#cartBody div:first-child{
+    bottom: 10%;
+}
+#anemiContent{
+bottom: 0;
+}
+#cardText{
+    background-color: #00000080;
+    height: 80%;
+    width: 100%;
+    border-radius: 15px;
+    top: -100%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+#card:hover #cardText {
+    top: 0 !important; 
 }

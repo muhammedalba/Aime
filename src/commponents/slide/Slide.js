@@ -5,25 +5,27 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // icon
 import { AiFillLike } from "react-icons/ai";
+
 import Loading from '../loading/Loading';
+
 import { TOP_URl } from '../../Api/ApI';
 export default function Slide() {
   const [TopData,setdata]=useState([]);
   const [loading,setloading]=useState(true);
   useEffect(() => {
   
-    getTopAnime();
+    getTopAnime(TOP_URl);
    }, [])
 
 
 
 
- async function getTopAnime() {
+ async function getTopAnime(TOP_URl) {
   try{
-    await fetch(TOP_URl)
-    .then(data=>data.json())
-    .then(TopData=>setdata(TopData.data));
-    setloading(false);
+    const res= await fetch(TOP_URl)
+    const re=await res.json()
+      setdata(re.data);
+     setloading(false);
   }catch(err){console.log(err);}
 
    
@@ -36,8 +38,8 @@ export default function Slide() {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3 // optional, default to 1.
+      items: 4,
+      slidesToSlide: 4 // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -47,12 +49,12 @@ export default function Slide() {
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-      slidesToSlide: 1 // optional, default to 1.
+      slidesToSlide: 1// optional, default to 1.
     }
   };
  
-  const ShowData= TopData.map((e,index)=>{return <div key={index} className="card mx-2 " style={{width: '18rem'}}>
-  <a target='_blank' href={e.trailer.url}><img id='imge' src={e.images.jpg.image_url} className="card-img-top" alt={e.title}/> </a>
+  const ShowData= TopData.map((e,index)=>{return <div key={index} className="card mx-2 " style={{width: '14rem'}}>
+  <img id='imge' src={e.images.jpg.image_url} className="card-img-top" alt={e.title}/>
   
   <div className="card-body">
     <h5 className="card-title">{e.title}<span>{e.year}</span></h5>
@@ -70,10 +72,10 @@ export default function Slide() {
   
   })
   return (<>
-  {loading && <Loading/>}
-    <div id='Carousel'> 
+  {/* {loading && <Loading/>} */}
+   
 
-<div id='Carousel2'>
+<div id='Carousel'>
 <Carousel responsive={responsive}
     // swipeable={false}
     // draggable={false}
@@ -100,6 +102,6 @@ export default function Slide() {
 </div>
     
       
-  </div>
+ 
   </>)
 }
