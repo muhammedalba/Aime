@@ -192,8 +192,7 @@ header #span svg{
 #searchAnemi{
     background: url(../../imges/footer_bg.jpg)  repeat-x ;
     background-size: 100% 100%;
-    position: absolute;
-    top: 80%;
+
 }
 /* card */
 #card{

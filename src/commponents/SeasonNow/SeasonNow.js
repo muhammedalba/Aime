@@ -1,14 +1,17 @@
 import React,{useState,useEffect} from 'react'
 // icon
-import { AiFillLike } from "react-icons/ai";
 import { SEAON_SNOW } from '../../Api/ApI';
+import { AiFillLike } from "react-icons/ai";
+import { IoMdTime } from "react-icons/io";
+import Loading from '../loading/Loading';
 
 export default function SeasonNow() {
     const [TopData,setdata]=useState([]);
     const [loading,setloading]=useState(true);
+    
     useEffect(() => {
-        // getSeasonAnimeNow(SEAON_SNOW) 
-        
+        getSeasonAnimeNow(SEAON_SNOW) ;
+      
      }, [])
     async function getSeasonAnimeNow(SEAON_SNOW) {
         try{
@@ -16,38 +19,57 @@ export default function SeasonNow() {
         const re=await res.json()
           setdata(re.data);
            setloading(false);
-           console.log(TopData);
+          
            
         }catch(err){console.log(err);}
       
          
         }
 
-    const ShowData=TopData.map((e,index)=>{return <div key={index} className="card m-auto " style={{width: '14rem'}}>
-    <img id='imge' src={e.images.jpg.image_url} className="card-img-top" alt={e.title}/>
-    
-    <div className="card-body">
-      <h5 className="card-title">{e.title}<span>{e.year}</span></h5>
-      <p> <AiFillLike/>{e.favorites}</p>
-      {/* <p className="card-text">{e.synopsis.slice(0,150)}...</p> */}
-      <a   href={e.url} className="btn btn-primary">Go somewhere</a>
-    </div>
-   
-    <div>
-     
-    </div>
+     //ShowData
+  const ShowData= TopData !== undefined  && TopData.map((e,index)=>{return <div key={index} id="card" className="  position-relative m-auto " style={{ width: "14rem" ,}}>
+  <div className="position-absolute top-0 left-0 overflow-hidden h-100 w-100">
+   <img
+     id="imge"
+     src={e.images.jpg.image_url}
+     className=" "
+     alt={e.title}
+     />
+     {e.synopsis && <p id="cardText" className="position-absolute px-2 w-100 m-0">{e.synopsis.slice(0,200)}</p>}  
   </div>
-    
-    
-    
-    })
-  return (
-<div className='container-fluid pt-5'>
+ 
+   <a href={e.url}>
+   <div id="cartBody" className=" w-100 h-100 position-relative z-3">
+     <div  className="px-2 w-100 position-absolute  d-flex justify-content-between align-items-center ">
+       <span id="cardSpanColor"> {e.title.slice(0,20)}</span>
+       <span>{e.year}</span>
+     </div>
+     <div id="anemiContent" className="px-2 position-absolute  d-flex justify-content-between align-items-center my-2 px-1 w-100">
+      <span id="cardSpanColor" className=" d-flex  align-items-center"> <IoMdTime color='#ffff'/>{e.duration && e.duration}</span>
+      <span  className=" d-flex  align-items-center"><AiFillLike color="#0d6efd" />{e.favorites}</span>
+       
+       
+     </div>
+  
+ 
+   </div> 
+   </a>
+ </div>
+   
+   
+   
+  
+   });
+  return (<>
+  {loading && <Loading/>}
+<div className='container-fluid pt-5 bg-dark'>
 <div className='col-sm-12'>
     <div className='row '>
+       <div className='container d-flex flex-wrap m-auto  gap-3'>
         {ShowData}
+       </div>
     </div>
    </div>
 </div>
-  )
+  </>)
 }

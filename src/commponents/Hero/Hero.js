@@ -3,14 +3,19 @@ import "./Hero.css"
 // icons
 import { IoTimeOutline } from "react-icons/io5";
 import { LuCalendarDays } from "react-icons/lu";
+// commponents
+import SeasonNow from '../SeasonNow/SeasonNow';
+import Title from '../Title/Title';
+import Nav from '../Nav/Nav';
+import SerachedContent from '../SerachedContent/SerachedContent';
 
 
 
 export default function Hero() {
 
-  return (
+  return (<>
+  <Nav search='true'/>
     <div id='hero' className='w-100 '>
-      
         <div className='col-sm-12 col-md-7  position-relative top-50 px-5 '>
           <h1 className='text-white  fw-bold'>
           Unlimited <span>anime</span> , TVs Shows, & More.
@@ -35,5 +40,9 @@ export default function Hero() {
     
 
     </div>
-  )
+    <SerachedContent/>
+    <Title text="Season Now" bgColor="#000"/>  
+    <SeasonNow/>
+
+  </>)
 }

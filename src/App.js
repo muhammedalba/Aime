@@ -3,10 +3,9 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 import Home from './commponents/Hero/Hero';
 import Nav from './commponents/Nav/Nav';
-import SeasonNow from './commponents/SeasonNow/SeasonNow';
 import Title from './commponents/Title/Title';
-import Slide from './commponents/slide/Slide';
 import TopAnemi from './commponents/TopAnemi/TopAnemi';
+import Slide from './commponents/slide/Slide';
 
 function App() {
 
@@ -15,14 +14,16 @@ function App() {
 
   return (
     <div className="App position-relative">
-      <Nav/>
+     
      <Routes>
       <Route element={<Home/>} path='/'/>
       <Route element={<TopAnemi/>} path='/topanemi'/>
+      <Route element={<Slide/>} path='/:id'/>
     
       
      </Routes>
-      
+  
+   
       
       
       {/* <Title text={"top anime"} bgColor={BgColor}/> */}
