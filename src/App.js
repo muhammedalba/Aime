@@ -5,7 +5,7 @@ import Home from './commponents/Hero/Hero';
 import Nav from './commponents/Nav/Nav';
 import Title from './commponents/Title/Title';
 import TopAnemi from './commponents/TopAnemi/TopAnemi';
-import Slide from './commponents/slide/Slide';
+import AnimeBeyID from './commponents/AnimeBeyID/AnimeBeyID';
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
      <Routes>
       <Route element={<Home/>} path='/'/>
       <Route element={<TopAnemi/>} path='/topanemi'/>
-      <Route element={<Slide/>} path='/:id'/>
+      <Route element={<AnimeBeyID/>} path='/:id'/>
     
       
      </Routes>

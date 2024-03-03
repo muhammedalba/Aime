@@ -55,7 +55,7 @@ const {dispatch}= useContext(Search);
   // navLink
    const nav_link = [
     { title: "home", path: "/" },
-    { title: "top anemi", path: "topanemi" },
+    { title: "top anemi", path: "/topanemi" },
     { title: "tv show", path: "/" },
     { title: "pricing", path: "/" },
     { title: "blog", path: "/" },
@@ -75,7 +75,7 @@ const {dispatch}= useContext(Search);
   const nav_in_mobile = nav_link.map((e, index) => {
     return (
       <li key={index} className="p-3 text-center">
-        <Link onClick={() => setopin(!opin)} href={e.path}>
+        <Link onClick={() => setopin(!opin)} to={e.path}>
           {e.title}
         </Link>
       </li>

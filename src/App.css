@@ -1,0 +1,46 @@
+/* card */
+#card{
+    height: 350px;
+    color: var(--minColor);
+    padding: 0;
+    margin: 20px 10px;
+}
+#card a {
+    color: var(--minColor);
+    text-decoration: none;
+}
+/* imge */
+#imge {
+    height: 80%;
+    width: 100%;
+    border-radius:15px ;
+    -webkit-border-radius:15px ;
+    -moz-border-radius:15px ;
+    -ms-border-radius:15px ;
+    -o-border-radius:15px ;
+}
+#cardSpanColor{
+  
+    color: var(--spanColor);
+}
+#cartBody div:first-child{
+    bottom: 10%;
+}
+#anemiContent{
+bottom: 0;
+}
+#cardText{
+    background-color: #00000080;
+    height: 80%;
+    width: 100%;
+    border-radius: 15px;
+    top: -100%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+#card:hover #cardText {
+    top: 0 !important; 
+}

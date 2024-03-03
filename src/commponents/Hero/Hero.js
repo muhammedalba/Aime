@@ -35,10 +35,6 @@ export default function Hero() {
              </li>
           </ul>
         </div>
-
-      
-    
-
     </div>
     <SerachedContent/>
     <Title text="Season Now" bgColor="#000"/>  

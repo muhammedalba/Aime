@@ -1,39 +1,50 @@
 import React ,{useEffect,useState}from 'react'
-import './Slide.css'
+import './AnimeBeyID.css'
 // slide
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // icon
 import { AiFillLike } from "react-icons/ai";
+import { IoMdTime } from "react-icons/io";
 
+import Nav from '../Nav/Nav'
 import Loading from '../loading/Loading';
 
-import { TOP_URl } from '../../Api/ApI';
+import {  base_URl } from '../../Api/ApI';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+
+
 export default function Slide() {
   const [TopData,setdata]=useState([]);
   const [loading,setloading]=useState(true);
-  useEffect(() => {
+  const {id} =useParams();
+  const par =`${base_URl}/anime/${id}`;
   
-    getTopAnime(TOP_URl);
-   }, [])
-
-
-
-
- async function getTopAnime(TOP_URl) {
-  try{
-    const res= await fetch(TOP_URl)
-    const re=await res.json()
-      setdata(re.data);
-     setloading(false);
-  }catch(err){console.log(err);}
-
-   
-  }
+  useEffect(() => {
+    
+    getAnime(par);
+  }, [])
+  
   console.log(TopData);
-
-
-
+  TopData.images !== undefined  && console.log(TopData.images.jpg.image_url);
+  async function getAnime(par) {
+    try{
+      const res= await fetch(par)
+      const re=await res.json()
+      setdata(re.data);
+      setloading(false);
+      
+      // console.log(TopData.images.jpg.image_url);
+      // console.log([arry].map((e)=>{return e.jpg.image_url}));
+    }catch(err){console.log(err);}
+    
+    
+  }
+  
+  
+  
+  
   
   const responsive = {
     desktop: {
@@ -52,31 +63,16 @@ export default function Slide() {
       slidesToSlide: 1// optional, default to 1.
     }
   };
- 
-  const ShowData= TopData.map((e,index)=>{return <div key={index} className="card mx-2 " style={{width: '14rem'}}>
-  <img id='imge' src={e.images.jpg.image_url} className="card-img-top" alt={e.title}/>
-  
-  <div className="card-body">
-    <h5 className="card-title">{e.title}<span>{e.year}</span></h5>
-    <p> <AiFillLike/>{e.favorites}</p>
-    {/* <p className="card-text">{e.synopsis.slice(0,150)}...</p> */}
-    <a   href={e.url} className="btn btn-primary">Go somewhere</a>
-  </div>
- 
-  <div>
-   
-  </div>
-</div>
-  
-  
-  
-  })
+
   return (<>
-  {/* {loading && <Loading/>} */}
+  {loading && <Loading/>}
+  <Nav/>
    
 
-<div id='Carousel'>
-<Carousel responsive={responsive}
+<div id='Carousel'
+ style={{backgroundImage:TopData.images && `url(${TopData.images.jpg.large_image_url})`}}
+ >
+{/* <Carousel responsive={responsive}
     // swipeable={false}
     // draggable={false}
     // showDots={true}
@@ -94,12 +90,22 @@ export default function Slide() {
     // dotListClass="custom-dot-list-style"
     // itemClass="carousel-item-padding-40-px"
   >
- {ShowData}  
+  
+</Carousel> */}
 
-     </Carousel>
+
+  <div  id="AnimeBeydi" className="position-relative m-auto "
+   style={{ width: "25rem" ,}}>
+   <img
+     id="imge"
+     src={TopData.images && TopData.images.jpg.image_url}
+     className="w-100 h-100 "
+     alt={TopData.title}
+     />
+  </div>  
 
 
-</div>
+</div> 
     
       
  

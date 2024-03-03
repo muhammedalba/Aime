@@ -43,8 +43,9 @@ export default function SerachedContent() {
    
   
    });
+   console.log(loading);
   return (<>
-{/* { loading && <Loading/>} */}
+ {/* { loading && <Loading/>}  */}
     <div
     id="searchAnemi"
     style={{ display: anim.length > 0 ? "block" : "none" }}
