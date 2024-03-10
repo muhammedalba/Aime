@@ -56,9 +56,6 @@ const {dispatch}= useContext(Search);
    const nav_link = [
     { title: "home", path: "/" },
     { title: "top anemi", path: "/topanemi" },
-    { title: "tv show", path: "/" },
-    { title: "pricing", path: "/" },
-    { title: "blog", path: "/" },
     { title: "contact", path: "/" },
   ];
 
@@ -115,7 +112,7 @@ const {dispatch}= useContext(Search);
               <img src={logo} alt="logo" />
             </div>
             <div className="d-none d-lg-block">
-              <ul className=" d-flex text-light ">{nav_link_show}</ul>
+              <ul className="my-0 h-100 d-flex  align-items-center ">{nav_link_show}</ul>
             </div>
             <div className="d-flex d-lg-none align-items-center ps-2 ">
               <span style={{ transform: !opin ? "scale(1)" : "scale(0)" }}>

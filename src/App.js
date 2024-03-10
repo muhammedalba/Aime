@@ -5,20 +5,22 @@ import Home from './commponents/Hero/Hero';
 import Nav from './commponents/Nav/Nav';
 import Title from './commponents/Title/Title';
 import TopAnemi from './commponents/TopAnemi/TopAnemi';
-import AnimeBeyID from './commponents/AnimeBeyID/AnimeBeyID';
+import AnimeByID from './commponents/AnimeByID/AnimeByID';
+import Footer from './commponents/Footer/Footer';
 
 function App() {
 
   // get property
   const BgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
 
-  return (
+  return (<>
+ 
     <div className="App position-relative">
      
      <Routes>
       <Route element={<Home/>} path='/'/>
       <Route element={<TopAnemi/>} path='/topanemi'/>
-      <Route element={<AnimeBeyID/>} path='/:id'/>
+      <Route element={<AnimeByID/>} path='/:id'/>
     
       
      </Routes>
@@ -31,8 +33,9 @@ function App() {
       {/* <Title text={"SeasonNow "} bgColor={BgColor}/> */}
 
     {/* <SeasonNow/> */}
+    
     </div>
-  );
+   <Footer/> </>);
 }
 
 export default App;

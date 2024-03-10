@@ -5,6 +5,7 @@ import { AiFillLike } from "react-icons/ai";
 import { IoMdTime } from "react-icons/io";
 import Loading from '../loading/Loading';
 import { Link } from 'react-router-dom';
+import { Fade } from 'react-awesome-reveal';
 
 export default function SeasonNow() {
     const [TopData,setdata]=useState([]);
@@ -24,7 +25,10 @@ export default function SeasonNow() {
 }
 
      //ShowData
-  const ShowData= TopData !== undefined  && TopData.map((e,index)=>{return <div key={index} id="card" className="  position-relative m-auto " style={{ width: "14rem" ,}}>
+  const ShowData= TopData !== undefined  && TopData.map((e,index)=>{return <Fade
+   duration={1000} damping={0.1} cascade direction='up'>
+
+  <div key={index} id="card" className="  position-relative m-auto " style={{ width: "14rem" ,}}>
   <div className="position-absolute top-0 left-0 overflow-hidden h-100 w-100">
    <img
      id="imge"
@@ -52,7 +56,7 @@ export default function SeasonNow() {
    </div> 
    </Link>
  </div>
-   
+ </Fade>
    
    
   
@@ -62,7 +66,7 @@ export default function SeasonNow() {
 <div className='container-fluid pt-5 bg-dark'>
 <div className='col-sm-12'>
     <div className='row '>
-       <div className='container d-flex flex-wrap m-auto  gap-3'>
+       <div className='container d-flex flex-wrap m-auto justify-content-around  gap-3'>
         {ShowData}
        </div>
     </div>

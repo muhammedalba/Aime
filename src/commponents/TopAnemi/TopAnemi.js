@@ -9,6 +9,7 @@ import Title from '../Title/Title';
 import { Link } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import Loading from '../loading/Loading';
+import { Fade } from 'react-awesome-reveal';
 
 
 
@@ -29,14 +30,16 @@ export default function TopAnemi() {
     const re=await res.json()
     setTopData(re.data);
        setloading(false);
-       console.log(TopData);
+  
        
     }catch(err){console.log(err);}
   
      
     }
     //ShowData
-    const ShowData=TopData !== undefined   && TopData.map((e,index)=>{return <div key={index} id="card" className="  position-relative m-auto " style={{ width: "14rem" ,}}>
+    const ShowData=TopData && TopData.map((e,index)=>{return <Fade
+      duration={1000} damping={0.1} cascade direction='up'>
+    <div key={index} id="card" className="  position-relative m-auto " style={{ width: "14rem" ,}}>
     <div className="position-absolute top-0 left-0 overflow-hidden h-100 w-100">
      <img
        id="imge"
@@ -66,7 +69,7 @@ export default function TopAnemi() {
    </div>
      
      
-     
+     </Fade>
     
      });
   return (
@@ -75,13 +78,13 @@ export default function TopAnemi() {
     <Nav/>
     <div id='Topanemi' className=''>
     {TopData && <Title text='Top anemi' bgColor='#000' />}
-      <div style={{backgroundColor:"#171d22"}} className=' pt-5 '>
-        <div className='container d-flex flex-wrap m-auto   gap-3'>
+  
+    </div>
+        <div style={{backgroundColor:"#171d22"}} className=' pt-5 '>
+        <div className='container d-flex flex-wrap m-auto   justify-content-around   gap-3'>
         {ShowData}
         </div>
       </div>
-    </div>
-    
     
     
     </>

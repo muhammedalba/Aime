@@ -1,0 +1,136 @@
+
+#Carousel {
+
+    height:60vh;
+    width: 100%;
+  
+}
+ #Carousel::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #07070860;
+     
+}
+.textAime {
+    display: flex;
+    flex-direction: column;
+    span{
+        color: var(--spanColor);
+    }
+}
+
+#Carousel .carousel-root{
+    height: 100%;
+    .axis-horizontal,
+    .slider,
+    .carousel-slider{
+        height: 100%;   
+    }
+    }
+#AnimeBeydi{
+ position: absolute;
+ transform: translate(-50%, -90%);
+ left: 50%;
+ height: 250px;
+ z-index: 999;
+ overflow: hidden;
+ -webkit-transform: translate(-50%, -90%);
+ -moz-transform: translate(-50%, -90%);
+ -ms-transform: translate(-50%, -90%);
+ -o-transform: translate(-50%, -90%);
+
+ #imge{
+    position: relative;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        width: 25rem;
+        z-index: 999;
+
+}
+
+}
+.borderColor{
+    position: relative;
+    padding: 3px;
+    height: 100%;
+    background-color: var(--spanColor);
+    overflow: hidden;
+    img{
+        z-index: 999;
+        position: relative;
+    }
+
+}
+ .borderColor::before,
+ .borderColor::after
+ {
+    content: '';
+    left: 0;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 75%;
+    z-index:998;
+    top: calc(25% /2);
+
+} 
+.borderColor::after{
+    height: 100%;
+    width: 80%;
+    left: 10%;
+    top: 0;
+ 
+}
+ 
+#rating{
+    border:3px solid var(--spanColor) ;
+    border-top:none ;
+    border-bottom:none ;
+    width: fit-content;
+    
+}
+/* #background{
+     border:1px solid var(--spanColor) ;
+    border-left:none ;
+    border-right:none ; 
+
+
+} */
+/*  */
+#promo{
+    position: relative;
+    border-top: 1px solid var(--spanColor);
+    span{
+        color:var(--spanColor) ;
+    }
+}
+#promo::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 50%;
+    background-color: var(--spanColor);
+    width: 30%;
+    height: 2px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+/* pisodes */
+#pisodes{
+    height: 300px;
+    width: 300px;
+    h4{
+        color: var(--spanColor);
+    }
+
+}

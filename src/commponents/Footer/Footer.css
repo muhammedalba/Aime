@@ -1,0 +1,11 @@
+#footer{
+    background-color: var(--bg-color);
+    color: var(--minColor) !important;
+    margin-bottom: 0 !important;
+    padding: 1rem;
+    border-top: 1px solid var(--spanColor);
+    span{
+        padding-left: 0.3rem;
+        color: var(--spanColor);
+    }
+}

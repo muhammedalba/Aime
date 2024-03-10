@@ -10,7 +10,7 @@
     text-decoration: none;
 }
 /* imge */
-#imge {
+#card  #imge {
     height: 80%;
     width: 100%;
     border-radius:15px ;

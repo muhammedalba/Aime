@@ -4,6 +4,7 @@ import { Search } from '../../Context/SearchContext';
 import { AiFillLike } from "react-icons/ai";
 import { IoMdTime } from "react-icons/io";
 import Loading from '../loading/Loading';
+import { Link } from 'react-router-dom';
 
 
 
@@ -21,7 +22,7 @@ export default function SerachedContent() {
      {e.synopsis && <p id="cardText" className="position-absolute px-2 w-100 m-0">{e.synopsis.slice(0,200)}</p>}  
   </div>
  
-   <a href={e.url}>
+   <Link to={`/${e.mal_id}`}>
    <div id="cartBody" className=" w-100 h-100 position-relative z-3">
      <div  className="px-2 w-100 position-absolute  d-flex justify-content-between align-items-center ">
        <span id="cardSpanColor"> {e.title.slice(0,20)}</span>
@@ -36,14 +37,14 @@ export default function SerachedContent() {
   
  
    </div> 
-   </a>
+   </Link>
  </div>
    
    
    
   
    });
-   console.log(loading);
+ 
   return (<>
  {/* { loading && <Loading/>}  */}
     <div

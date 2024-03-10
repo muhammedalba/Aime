@@ -6,7 +6,7 @@ header{
     -moz-transition: 1.5s;
     -ms-transition: 1.5s;
     -o-transition: 1.5s;
-    z-index: 999;
+    z-index: 1000;
 }
 nav li{
     list-style: none;
@@ -100,7 +100,7 @@ header span {
     -moz-transition: 3s;
     -ms-transition: 3s;
     -o-transition: 3s;
-    z-index: 999 !important;
+    z-index: 1001 !important;
     cursor: pointer;
 }
 #span svg:first-child{
