@@ -38,21 +38,24 @@ export default function Slide() {
   useEffect(() => {
     getepisodes(episodes_URL);
     
-  
+  return ()=>false
   }, [id]);
   useEffect(() => {
     Characters(characters_URL);
+    return ()=>false
   }, [id]);
   useEffect(() => {
   getpictures(pictures_URL);
-  return()=>{ return false}
+  return()=>  false
   }, [id]);
   useEffect(() => {
     getAnimevideos_URL(videos_URL );
+    return ()=>false
   }, [id]);
   useEffect(() => {
     getAnime(ID_URL);
     setloading(false);
+    return ()=>false
   }, [id]);
 
  
