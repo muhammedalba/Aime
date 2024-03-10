@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 // icon
 import { AiFillLike } from "react-icons/ai";
 import { IoMdTime } from "react-icons/io";
-import { FaRegStar } from "react-icons/fa";
+
 import { FaStar } from "react-icons/fa";
 
 import Nav from "../Nav/Nav";
@@ -29,17 +29,33 @@ export default function Slide() {
   const pictures_URL = `${ID_URL}/pictures`;
   const videos_URL = `${ID_URL}/videos`;
   const characters_URL = `${ID_URL}/characters`;
-  const episodes_URL = `https://api.jikan.moe/v4/anime/${id}/episodes`;
-
-
+  const episodes_URL = `${ID_URL}/episodes`;
+  
+  
+ 
+  
+  
   useEffect(() => {
-    getpictures(pictures_URL);
-    getAnimevideos_URL(videos_URL );
-    getAnime(ID_URL);
-    Characters(characters_URL);
     getepisodes(episodes_URL);
-    return()=>{ return false}
+    
+  
   }, [id]);
+  useEffect(() => {
+    Characters(characters_URL);
+  }, [id]);
+  useEffect(() => {
+  getpictures(pictures_URL);
+  return()=>{ return false}
+  }, [id]);
+  useEffect(() => {
+    getAnimevideos_URL(videos_URL );
+  }, [id]);
+  useEffect(() => {
+    getAnime(ID_URL);
+    setloading(false);
+  }, [id]);
+
+ 
 
   // bring anime pictures
   async function getpictures(pictures_URL) {
@@ -47,7 +63,7 @@ export default function Slide() {
       const res = await fetch(pictures_URL);
       const re = await res.json();
       setpictures(re.data);
-       setloading(false);
+       
 
 
     } catch (err) {
@@ -59,10 +75,6 @@ export default function Slide() {
     try {
       const res = await fetch(getAnimevideos_URL);
       const re = await res.json();
-
-      setloading(false);
-
-      // setvideosUrl(re.data.promo[0]);
       setpromoUrl(re.data.promo[0].trailer.embed_url);
       setpromoUrlTitleUrl(re.data.promo[0].title);
     } catch (err) {
@@ -75,9 +87,9 @@ export default function Slide() {
       const res = await fetch(ID_URL);
       const re = await res.json();
       setdata(re.data);
-      setloading(false);
+      
 
-      // console.log(TopData.images.jpg.image_url);
+     
       // console.log([arry].map((e)=>{return e.jpg.image_url}));
     } catch (err) {
       console.log(err);
@@ -90,7 +102,7 @@ export default function Slide() {
       const res = await fetch(characters_URL);
       const re = await res.json();
       setcharacters(re.data);
-      setloading(false);
+    
 
       // console.log(TopData.images.jpg.image_url);
       // console.log([arry].map((e)=>{return e.jpg.image_url}));
@@ -102,13 +114,8 @@ export default function Slide() {
   async function getepisodes(episodes_URL) {
     try {
       const res = await fetch(episodes_URL);
-      const re = await res.json();
-      setloading(false);
-      
+      const re = await res.json();   
       setepisodes(re.data)
-
-      // console.log(TopData.images.jpg.image_url);
-      // console.log([arry].map((e)=>{return e.jpg.image_url}));
     } catch (err) {
       console.log(err);
     }
@@ -119,8 +126,8 @@ export default function Slide() {
   const showAnimeepisodes=
   Animeepisodes && Animeepisodes.map((e, index) => {
       return (
-       <Fade direction="up" cascade duration={500} triggerOnce>
-       <div id="pisodes" key={index} 
+       <Fade direction="up" cascade duration={500} key={index} triggerOnce>
+       <div id="pisodes" 
       //  className="col-sm-12 col-md-4 my-4 "
        >
         
@@ -154,8 +161,8 @@ export default function Slide() {
   const showcharacters =
   characters && characters.slice(0,6).map((e, index) => {
       return (
-         <Fade direction="up" cascade duration={500} triggerOnce>
-        <div id="pisodes" style={{ height: "200px " }} key={index} className="">
+         <Fade direction="up" cascade duration={500}key={index} triggerOnce>
+        <div id="pisodes" style={{ height: "200px " }}  className="">
           <div style={{height:'80%'}} className="w-100 borderColor">
           <img className="w-100 h-100" src={ e.character.images.jpg.image_url} alt="" />
           </div>
@@ -191,12 +198,12 @@ export default function Slide() {
               style={{ width: "25rem" }}
             >
               <div className="borderColor ">
-                <img
+                {TopData.images!==undefined ? <img
                   id="imge"
-                  src={TopData.images && TopData.images.jpg.image_url}
+                  src={TopData.images.jpg.image_url}
                   className="w-100 h-100 "
                   alt={TopData.title}
-                />
+                />:''}
               </div>
             </div> 
             </Rotate>
@@ -340,17 +347,6 @@ export default function Slide() {
 
         </div>
       </div>
-
-
-            {/* <div id='Carousel' 
-        style={{backgroundImage:TopData.images && `url(${TopData.images.jpg.large_image_url})`}}
-      >*/}
-
-
-
-
-
-
     </>
   );
 }
