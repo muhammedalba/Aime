@@ -26,37 +26,25 @@ export default function Slide() {
   const { id } = useParams();
 
   const ID_URL = `${base_URl}/anime/${id}`;
-  const pictures_URL = `${ID_URL}/pictures`;
-  const videos_URL = `${ID_URL}/videos`;
-  const characters_URL = `${ID_URL}/characters`;
-  const episodes_URL = `${ID_URL}/episodes`;
+  const pictures_URL = `${base_URl}/anime/${id}/pictures`;
+  const videos_URL = `${base_URl}/anime/${id}/videos`;
+  const characters_URL = `${base_URl}/anime/${id}/characters`;
+  const episodes_URL = `${base_URl}/anime/${id}/episodes`;
   
   
  
-  
-  
-  useEffect(() => {
-    getepisodes(episodes_URL);
-    
-  return ()=>false
-  }, [id]);
-  useEffect(() => {
-    Characters(characters_URL);
-    return ()=>false
-  }, [id]);
-  useEffect(() => {
-  getpictures(pictures_URL);
-  return()=>  false
-  }, [id]);
-  useEffect(() => {
-    getAnimevideos_URL(videos_URL );
-    return ()=>false
-  }, [id]);
   useEffect(() => {
     getAnime(ID_URL);
-    setloading(false);
-    return ()=>false
-  }, [id]);
+    getAnimevideos_URL(videos_URL );
+    Characters(characters_URL);
+    getpictures(pictures_URL);
+     getepisodes(episodes_URL);
+     setloading(false);
+     return ()=>[TopData,characters,Animeepisodes,promoUrl,promoUrlTitleUrl,pictures]
+  },[id]);
+  
+
+
 
  
 
@@ -139,7 +127,7 @@ export default function Slide() {
            <div style={{height:'80%'}} className=" w-100 borderColor  ">
 
 
-          <img className="w-100 h-100" src={TopData.images && TopData.images.jpg.image_url} alt={e.title} />
+          {TopData.images && <img className="w-100 h-100" src={TopData.images.jpg.image_url} alt={e.title} />}
           </div> 
 
         <div className="d-flex justify-content-between align-items-center px-2">
@@ -164,7 +152,7 @@ export default function Slide() {
   const showcharacters =
   characters && characters.slice(0,6).map((e, index) => {
       return (
-         <Fade direction="up" cascade duration={500}key={index} triggerOnce>
+         <Fade direction="up" cascade duration={500} key={index} triggerOnce>
         <div id="pisodes" style={{ height: "200px " }}  className="">
           <div style={{height:'80%'}} className="w-100 borderColor">
           <img className="w-100 h-100" src={ e.character.images.jpg.image_url} alt="" />
@@ -177,6 +165,7 @@ export default function Slide() {
          </Fade>
       );
     });
+    console.log(TopData);
   return (
     <>
       {loading && <Loading />}
@@ -195,20 +184,20 @@ export default function Slide() {
             </Carousel>}
             {/* anime image in the middle srart */}
             <Rotate triggerOnce duration={500} direction="up">
-                         <div
+              <div
               id="AnimeBeydi"
               className=" d-none d-md-block mx-auto "
               style={{ width: "25rem" }}
             >
               <div className="borderColor ">
-                {TopData.images!==undefined ? <img
+                {TopData.images ? <img
                   id="imge"
                   src={TopData.images.jpg.image_url}
                   className="w-100 h-100 "
                   alt={TopData.title}
                 />:''}
               </div>
-            </div> 
+              </div> 
             </Rotate>
 
             {/* anime image in the middle end */}

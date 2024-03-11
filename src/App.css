@@ -1,4 +1,8 @@
+.App{
+    background-color: var(--bg-color);
+}
 /* card */
+
 #card{
     height: 350px;
     color: var(--minColor);
