@@ -2,7 +2,7 @@
     background-color: var(--bg-color);
     color: var(--minColor) !important;
     margin-bottom: 0 !important;
-    padding: 1rem;
+    padding:2rem;
     border-top: 1px solid var(--spanColor);
     span{
         padding-left: 0.3rem;

@@ -30,7 +30,7 @@ export default function Hero() {
                  <a href="/">Drama</a>
              </li>
              <li className="release-time d-flex align-items-center pe-3">
-                 <span className='p-1  d-flex align-items-center'><LuCalendarDays/> 2021</span>
+                 <span className='p-1  d-flex align-items-center'><LuCalendarDays/> 2024</span>
                  <span className='p-1  d-flex align-items-center'><IoTimeOutline/> 128 min</span>
              </li>
           </ul>
@@ -39,6 +39,6 @@ export default function Hero() {
     <SerachedContent/>
     <Title text="Season Now" bgColor="#000"/>  
     <SeasonNow/>
-
+    
   </>)
 }

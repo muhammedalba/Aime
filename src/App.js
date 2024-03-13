@@ -19,6 +19,7 @@ function App() {
      
      <Routes>
       <Route element={<Home/>} path='/'/>
+
       <Route element={<TopAnemi/>} path='/topanemi'/>
       <Route element={<AnimeByID/>} path='/:id'/>
     

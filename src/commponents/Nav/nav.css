@@ -44,8 +44,15 @@ nav a {
     
 }
 header .serch{
-    width: 25%;
+    width: 30%;
     margin: 0 auto;
+}
+@media screen and (max-width:760px) {
+    header .serch{
+        width: 80%;
+       
+    }
+    
 }
 header .serch svg {
     color: white;
