@@ -7,11 +7,12 @@ import Title from './commponents/Title/Title';
 import TopAnemi from './commponents/TopAnemi/TopAnemi';
 import AnimeByID from './commponents/AnimeByID/AnimeByID';
 import Footer from './commponents/Footer/Footer';
+import ContactMe from './commponents/Contactme/ContactMe';
 
 function App() {
 
   // get property
-  const BgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
+  // const BgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
 
   return (<>
  
@@ -19,6 +20,7 @@ function App() {
      
      <Routes>
       <Route element={<Home/>} path='/'/>
+      <Route element={<ContactMe/>} path='/ContactMe'/>
 
       <Route element={<TopAnemi/>} path='/topanemi'/>
       <Route element={<AnimeByID/>} path='/:id'/>

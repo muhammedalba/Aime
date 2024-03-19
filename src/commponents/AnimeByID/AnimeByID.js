@@ -223,7 +223,7 @@ const img="https://cdn.myanimelist.net/images/anime/1245/116760l.jpg";
               </Carousel>
             )}
             {/* anime image in the middle srart */}
-            <Rotate triggerOnce duration={500} direction="up">
+            {/* <Rotate triggerOnce duration={500} direction="up"> */}
               <div
                 id="AnimeBeydi"
                 className=" d-none d-md-block mx-auto "
@@ -242,7 +242,7 @@ const img="https://cdn.myanimelist.net/images/anime/1245/116760l.jpg";
                   )}
                 </div>
               </div>
-            </Rotate>
+            {/* </Rotate> */}
 
             {/* anime image in the middle end */}
           </div>
@@ -309,7 +309,9 @@ const img="https://cdn.myanimelist.net/images/anime/1245/116760l.jpg";
                   >
                     <div className="px-2 w-100 position-absolute  d-flex justify-content-between align-items-center ">
                       <span>{TopData.year}</span>
-                      <span>{TopData.score}</span>
+                      <span>
+                      <FaStar color="#e3d704" />
+                        {TopData.score}</span>
                     </div>
                     <div
                       id="anemiContent"

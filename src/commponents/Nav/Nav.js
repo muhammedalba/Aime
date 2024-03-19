@@ -56,7 +56,7 @@ const {dispatch}= useContext(Search);
    const nav_link = [
     { title: "home", path: "/" },
     { title: "top anemi", path: "/topanemi" },
-    { title: "contact", path: "/" },
+    { title: "contact", path: "/Contact" },
   ];
 
   // navLink in map

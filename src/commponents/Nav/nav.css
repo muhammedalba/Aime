@@ -7,7 +7,12 @@ header{
     -ms-transition: 1.5s;
     -o-transition: 1.5s;
     z-index: 1000;
+    font-family: "Linden Hill", serif;
+    font-weight: 400;
+    font-style: italic;
+
 }
+
 nav li{
     list-style: none;
 

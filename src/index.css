@@ -5,6 +5,9 @@
 --minColor:white;
 --spanColor:#e3d704;
 --bg-color:#171d22;
+font-family: "Linden Hill", serif;
+font-weight: 400;
+font-style: italic;
 }
 
 
@@ -14,11 +17,12 @@
 
 
 body {
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',    sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+ text-transform: capitalize;
 
 }
 li{

@@ -1,0 +1,157 @@
+#contactMe  {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    padding-top: 100px;
+    
+}
+#contactMe form{
+width: 100% ;
+padding: 20px;
+color: var(--minColor);
+}
+#contactMe  #name,
+#contactMe #email{
+margin:  2rem 0;
+position: relative;
+height: 70px;
+}
+form label{
+position: absolute;
+color: var(--parColor);
+left: 20px;
+top: 0;
+border: 0px solid var(--spanColor);
+padding: 5px;
+transform: translateY(50%);
+z-index:-1;
+transition:0.2s ;
+-webkit-transition:0.2s ;
+-moz-transition:0.2s ;
+-ms-transition:0.2s ;
+-o-transition:0.2s ;
+border-radius: 15px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+-ms-border-radius: 15px;
+-o-border-radius: 15px;
+-webkit-transform: translateY(50%);
+-moz-transform: translateY(50%);
+-ms-transform: translateY(50%);
+-o-transform: translateY(50%);
+}
+form textarea{
+min-height: 125px;
+max-height: 165px;
+resize: vertical;
+}
+form input,textarea{
+outline: none;
+background-color: transparent;
+border: 1px solid var(--spanColor);
+width: 80%;
+border-radius: 10px;
+height: 100%;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+-ms-border-radius: 10px;
+-o-border-radius: 10px;
+color: var(--minColor);
+padding:15px;
+}
+#contactMe #send{             
+background-color: var(--spanColor);
+padding: 5px 10px;
+color: black;
+border-radius:20px ;
+-webkit-border-radius:20px ;
+-moz-border-radius:20px ;
+-ms-border-radius:20px ;
+-o-border-radius:20px ;
+cursor: pointer;
+margin-top: 100px;
+width: 10rem;
+height: 50px;
+border: none;
+align-items: center;
+display: flex;
+justify-content: center;
+}
+
+#contactMe #contactInvo{
+color: var(--minColor) ;
+width: fit-content;
+padding: 20px;
+text-decoration: none;
+}
+form h2,
+#contactInvo h2{
+    padding: 10px;
+    border-bottom: 1px solid var(--spanColor);
+    text-align: center;
+    color: var(--spanColor);
+}
+
+#contactMe #infoIcon{
+display: flex;
+margin: 2rem 0;
+align-items: center;
+gap: 10px;
+color: var(--parColor);
+width: fit-content;
+
+}
+#contactMe #infoIcon a{
+text-decoration: none;
+color: var(--parColor);
+
+}
+#contactMe #infoIcon h3{
+color: var(--spanColor);
+}
+#infoIcon svg{      
+color: var(--spanColor);
+border-radius: 50% !important;
+border-radius: 10px;
+font-size: 50px;
+border: 1px solid transparent;
+padding: 5px;
+transition: 0.5s;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+-ms-border-radius: 10px;
+-o-border-radius: 10px;
+-webkit-transition: 0.5s;
+-moz-transition: 0.5s;
+-ms-transition: 0.5s;
+-o-transition: 0.5s;
+}
+#infoIcon div{
+margin: 1rem;
+}
+
+
+
+#contactInvo #infoIcon svg:hover{
+border-color: var(--spanColor) !important;
+} 
+form #email input:valid+label,
+form #email input:focus+label,
+form #name input:valid+label,
+form #name input:focus+label,
+form #name textarea:valid+label,
+form #name textarea:focus+label{
+background-color: var(--bg-color);
+top: -50% !important;
+z-index: 2 !important;
+border-width: 1px !important;
+}
+/* #contactMe form input:focus~label,
+#contactMe form input:valid~label{
+background-color: var(--bg-color);
+top: -50% !important;
+z-index: 2 !important;
+border-width: 1px !important;
+} */
+

@@ -92,6 +92,9 @@ background-size: 100% 100%;
     top: 0;
  
 }
+ svg{
+    margin-right: 5px;
+}
  
 #rating{
     border:3px solid var(--spanColor) ;
