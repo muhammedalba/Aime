@@ -129,15 +129,17 @@ const {dispatch}= useContext(Search);
           {/* input  */}
         </nav>
     {  search && <div className="serch position-relative my-3">
-          <div className="">
-            <CiSearch onClick={searchAnemi} />
+          <div className="h-100  w-100 d-flex align-items-center ">
+           
             <input
               style={{ backgroundColor: scroll ? "#171d22" : "transparent" }}
               type="search"
               className="h-100  w-100"
-              placeholder="serch..."
+              placeholder="Serch..."
+              
               onChange={(e) => setvalue(e.target.value)}
             />
+            <label> <CiSearch onClick={searchAnemi} /></label>
           </div>
 
           {/* {error && <p className="position-absolute w-100"> not fonde </p>} */}

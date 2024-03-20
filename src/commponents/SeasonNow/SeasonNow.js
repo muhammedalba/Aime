@@ -26,7 +26,7 @@ export default function SeasonNow() {
 
      //ShowData
   const ShowData= TopData !== undefined  && TopData.map((e,index)=>{return <Fade
-    key={index} duration={1000} damping={0.1} cascade direction='up'>
+    key={index} triggerOnce duration={1000} damping={0.1} cascade direction='up'>
 
   <div  id="card" className="  position-relative m-auto " style={{ width: "14rem" ,}}>
   <div className="position-absolute top-0 left-0 overflow-hidden h-100 w-100">

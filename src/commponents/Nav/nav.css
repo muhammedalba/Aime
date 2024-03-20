@@ -34,23 +34,41 @@ nav a {
 }
 .serch input{
     background-color: var(--bg-color);
-    border: 1px solid var(--spanColor);
-    border-radius: 20px;
-    color: white ;
+   border: none;
+    color: var(--spanColor) ;
     padding: 5px  ;
-    padding-left: 38px;
+    padding-left: 20px;
     outline: none;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    font-size: 25px;
+    font-weight: 500;
 
  
     
 }
+.serch input:focus{
+    background-color: var(--bg-color) !important;
+}
 header .serch{
     width: 30%;
     margin: 0 auto;
+    height: 35px;
+    label{
+        width: 35px;
+        height: 35px;
+        background-color: var(--spanColor);
+        color: var(--minColor);
+        display: flex;
+        align-items: center;
+    }
+    div{
+        border: 1px solid var(--spanColor);
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        overflow: hidden;
+    }
 }
 @media screen and (max-width:760px) {
     header .serch{
@@ -63,14 +81,6 @@ header .serch svg {
     color: white;
     font-size: 30px;
     cursor: pointer;
-    position: absolute;
-    left: 6px;
-    bottom: 50%;
-    transform: translateY(50%);
-    -webkit-transform: translateY(50%);
-    -moz-transform: translateY(50%);
-    -ms-transform: translateY(50%);
-    -o-transform: translateY(50%);
     z-index: 100;
 }
 .serch p{
