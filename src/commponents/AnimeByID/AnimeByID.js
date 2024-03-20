@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import "./AnimeByID.css";
 // slide
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -131,7 +131,7 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
     return () => {
       isMounted = false; // تعيين المتغير إلى false عند إلغاء تحميل المكون
     };
-  }, [id]); // يعتمد التأثير على معرف الأنمي
+  }, [id,ID_URL, videos_URL, characters_URL, pictures_URL, episodes_URL]); // يعتمد التأثير على معرف الأنمي
 
   //show Anime  Animeisodes
   const showAnimeepisodes =
@@ -201,7 +201,7 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
         </Fade>
       );
     });
-const img="https://cdn.myanimelist.net/images/anime/1245/116760l.jpg";
+// const img="https://cdn.myanimelist.net/images/anime/1245/116760l.jpg";
   return (
     <>
       {loading && <Loading />}
