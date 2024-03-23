@@ -141,3 +141,16 @@ background-size: 100% 100%;
     }
 
 }
+@media screen and (max-width:768px) {
+   .characters .css-zvi4ix {
+    
+        width: 100% !important;
+       
+    
+    }
+    .characters #pisodes{
+        width: 90% !important;
+        margin: auto;
+    }
+    
+}

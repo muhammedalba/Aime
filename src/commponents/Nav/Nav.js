@@ -26,7 +26,8 @@ const {dispatch}= useContext(Search);
 
 
   // get property
-  const bgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
+  // const bgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
+  const bgColor = '#171d22';
    
   window.onscroll = () => {
     
@@ -54,9 +55,9 @@ const {dispatch}= useContext(Search);
 
   // navLink
    const nav_link = [
-    { title: "home", path: "/" },
+    { title: "SEASON NOW", path: "/" },
     { title: "top anemi", path: "/topanemi" },
-    { title: "contact", path: "/Contact" },
+    { title: "contact", path: "/ContactMe" },
   ];
 
   // navLink in map
@@ -117,7 +118,7 @@ const {dispatch}= useContext(Search);
             <div className="d-flex d-lg-none align-items-center ps-2 ">
               <span style={{ transform: !opin ? "scale(1)" : "scale(0)" }}>
                 <FaBars
-                  color={opin ? "#e3d704" : "white"}
+                  color={ "#e3d704" }
                   fontSize={"35px"}
                   cursor={"pointer"}
                   onClick={() => setopin(!opin)}
@@ -149,7 +150,7 @@ const {dispatch}= useContext(Search);
       <ul
         style={{
           transform: opin ? "translateX(0)" : "translateX(200%)",
-          backgroundColor: scroll ? "#171d22" : "transparent",
+          // backgroundColor: scroll ? "#171d22" : "transparent",
         }}
         id="mobile"
         className="p-4"
@@ -157,7 +158,7 @@ const {dispatch}= useContext(Search);
         <span>
           <img src={logo} alt="logo" />
           <IoClose
-            style={{ transform: opin && "rotate(-180deg)" }}
+            style={{ transform: opin ? "rotate(-180deg)":'rotate(0deg)' }}
             color={opin ? "#e3d704" : "white"}
             fontSize={"35px"}
             cursor={"pointer"}

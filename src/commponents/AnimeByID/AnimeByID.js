@@ -27,15 +27,6 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
 
 
 
-
-
-
-
-
-
-
-
-
   const [TopData, setdata] = useState([]);
   const [characters, setcharacters] = useState([]);
   const [Animeepisodes, setepisodes] = useState([]);
@@ -131,7 +122,7 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
     return () => {
       isMounted = false; // تعيين المتغير إلى false عند إلغاء تحميل المكون
     };
-  }, [id,ID_URL, videos_URL, characters_URL, pictures_URL, episodes_URL]); // يعتمد التأثير على معرف الأنمي
+  }, [id]); // يعتمد التأثير على معرف الأنمي
 
   //show Anime  Animeisodes
   const showAnimeepisodes =
@@ -201,7 +192,7 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
         </Fade>
       );
     });
-// const img="https://cdn.myanimelist.net/images/anime/1245/116760l.jpg";
+    console.log(pictures);
   return (
     <>
       {loading && <Loading />}
@@ -210,9 +201,10 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
         <div className="container ">
           {/* Carousel anime image  */}
           <div id="Carousel"
-           style={{backgroundImage:TopData.images && !imges && `url(${TopData.images.jpg.large_image_url})` }} 
+          //  style={{backgroundImage:TopData.images && !imges && `url(${TopData.images.jpg.large_image_url})` }} 
+           style={{backgroundImage:  !imges && `url(${TopData.images.jpg.large_image_url})` }} 
            className="position-relative ">
-            {imges && (
+            {pictures && pictures.length >0 ? (
               <Carousel
                 transitionTime={500}
                 showArrows={true}
@@ -221,7 +213,9 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
               >
                 {imges}
               </Carousel>
-            )}
+            ):(<div style={{ height: "100%" }} >
+            <img className="w-100 h-100" src={require('https://cdn.myanimelist.net/images/anime/1245/116760l.jpg')} alt="" />
+          </div>)}
             {/* anime image in the middle srart */}
             {/* <Rotate triggerOnce duration={500} direction="up"> */}
               <div
@@ -230,7 +224,7 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
                 style={{ width: "25rem" }}
               >
                 <div className="borderColor ">
-                  {TopData.images ? (
+                  {TopData && TopData.images ? (
                     <img
                       id="imge"
                       src={TopData.images.jpg.image_url}
@@ -239,7 +233,8 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
                     />
                   ) : (
                     ""
-                  )}
+                  )
+                  }
                 </div>
               </div>
             {/* </Rotate> */}
@@ -344,7 +339,7 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
               <h2 id="promo" className="text-center text-white p-3">
                 <span>promo</span> {promoUrlTitleUrl}
               </h2>
-              {promoUrl && (
+              {promoUrl ? (
                 <div className="borderColor position-relative mt-5 h-auto">
                   <iframe
                     style={{ zIndex: "999", display: "block" }}
@@ -356,7 +351,9 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
                     allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   ></iframe>
                 </div>
-              )}
+              ):(<div className="w-100 p-4">
+              <p> sorry there is a problem with the servedr</p>
+            </div>)}
             </div>
           </Fade>
           {/* anime promo end */}
@@ -368,9 +365,12 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
                 <span>Anime characters</span>
               </h2>
             </Fade>
-            <div className="d-flex flex-wrap justify-content-around">
+            <div className=" characters d-flex flex-wrap justify-content-around">
               <Fade direction="up" triggerOnce cascade damping={0.1}>
-                {showcharacters}
+                {showcharacters &&showcharacters.length >0 ?(showcharacters)
+                :(<div className="w-100 p-4">
+                  <p> sorry there is a problem with the servedr</p>
+                </div>)}
               </Fade>
             </div>
           </div>
@@ -381,9 +381,12 @@ const episodes_URL = `${base_URl}/anime/${id}/episodes`;
             <h2 id="promo" className="text-center text-white p-3 my-1">
               <span>Anime episodes</span>
             </h2>
-            <div className="d-flex flex-wrap justify-content-around">
+            <div  className=" d-flex flex-wrap justify-content-around">
               <Rotate triggerOnce cascade damping={0.1}>
-                {showAnimeepisodes}
+                {showAnimeepisodes && showAnimeepisodes.length >0 ?(showAnimeepisodes)
+                :(<div className="w-100 p-4">
+                  <p> sorry there is a problem with the servedr</p>
+                </div>) }
               </Rotate>
             </div>
           </div>

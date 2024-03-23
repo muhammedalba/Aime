@@ -161,13 +161,13 @@ header #span svg{
 /* mobile */
 #mobile{
     position: fixed;
-    top: 50px;
+    top: 0px;
     right:  0;
     background-color:#171d22 ;
 
     padding: 10px;
     width: fit-content;
-    height: 73vh;
+    height: fit-content;
     transform: translateX(200%);
     -webkit-transform: translateX(200%);
     -moz-transform: translateX(200%);

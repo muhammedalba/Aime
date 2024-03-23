@@ -25,7 +25,7 @@ export default function SeasonNow() {
 }
 
      //ShowData
-  const ShowData= TopData !== undefined  && TopData.map((e,index)=>{return <Fade
+  const ShowData= TopData !== undefined  && TopData.map((e,index)=>{return <Fade 
     key={index} triggerOnce duration={1000} damping={0.1} cascade direction='up'>
 
   <div  id="card" className="  position-relative m-auto " style={{ width: "14rem" ,}}>
@@ -66,7 +66,7 @@ export default function SeasonNow() {
 <div className='container-fluid pt-5 bg-dark'>
 <div className='col-sm-12'>
     <div className='row '>
-       <div className='container d-flex flex-wrap m-auto justify-content-around  gap-3'>
+       <div id='cardContainer' className='container d-flex flex-wrap m-auto justify-content-around  gap-3'>
         {ShowData}
        </div>
     </div>

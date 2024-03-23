@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Linden+Hill:ital@0;1&display=swap');
+:root{
 
+    --minColor:white;
+    --spanColor:#e3d704;
+    --bg-color:#171d22;
+    font-family: "Linden Hill", serif;
+    font-weight: 400;
+    font-style: italic;
+    }
 .App{
     background-color: var(--bg-color);
 }
@@ -51,4 +59,16 @@ bottom: 0;
 }
 #card:hover #cardText {
     top: 0 !important; 
+}
+@media screen and (max-width:576px) {
+    #cardContainer .css-zvi4ix{
+        width: 100%;
+        #card{
+                width:85% !important;
+            
+            }
+
+    }
+   
+    
 }

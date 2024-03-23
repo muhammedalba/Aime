@@ -6,9 +6,13 @@
    /* position:absolute;
    top: 0;
    left: 0; */
+   text-shadow: 2px 2px 8px #ffffff99;
+    font-weight: 900;
+    color: black; 
 }
 #hero h1 {
    font-size: 2rem;
+   color: black;
 }
 .release-time  span svg,
 #hero h1 span{

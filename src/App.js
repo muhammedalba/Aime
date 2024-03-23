@@ -2,8 +2,6 @@
 import { Route, Routes } from 'react-router';
 import './App.css';
 import Home from './commponents/Hero/Hero';
-import Nav from './commponents/Nav/Nav';
-import Title from './commponents/Title/Title';
 import TopAnemi from './commponents/TopAnemi/TopAnemi';
 import AnimeByID from './commponents/AnimeByID/AnimeByID';
 import Footer from './commponents/Footer/Footer';
@@ -12,7 +10,7 @@ import ContactMe from './commponents/Contactme/ContactMe';
 function App() {
 
   // get property
-  // const BgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
+  //  const BgColor = document.styleSheets[0].cssRules[0].style.getPropertyValue("--bg-color");
 
   return (<>
  
